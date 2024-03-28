@@ -1,12 +1,17 @@
 export default class Field {
-    constructor(s = '', preserve='') {
+    constructor(s = '', k='') {
         this.value = s;
+        this.keep = k;
         this.isConverted = false;
     }
     
     convert() {
-        if (!this.isConverted) {
-        	console.log('converted');
+        if (!this.isConverted) {            
+        	for (let i in this.value) {
+        	    if (this.value[i] != this.keep) {
+        	        console.log('convert char: ' + this.value[i]);
+        	    }
+        	}
             this.isConverted = true;
         }
     }
