@@ -14,9 +14,9 @@ export default class Field {
                 
     	for (let i = 0; i < this.value.length; i++) {
     	    if (k.includes(this.value[i])) {
-    	        converted.push(convertChar(this.value[i], shifted[i]));
-    	    } else {
     	        converted.push(this.value[i]);
+    	    } else {
+    	        converted.push(convertChar(this.value[i], shifted[i]));
     	    }
     	}
     	
