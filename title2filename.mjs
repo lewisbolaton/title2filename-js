@@ -5,9 +5,10 @@ export default function title2filename(separator, ...fields) {
     	var f;
         if (typeof fields[i] === 'string') {
         	f = new Field(fields[i]);
+        	console.log(f.convert());
         } else {
-        	f = new Field(...fields[i]);
+        	f = new Field(fields[i][0]);
+        	console.log(f.convert(fields[i][1]));
         }
-        f.convert();
     }
 }
