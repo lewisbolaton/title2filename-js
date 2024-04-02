@@ -1,19 +1,30 @@
+import convertChar from './convertChar.mjs';
+
 export default class Field {
-    constructor(s = '', preserve='') {
-        this.value = s;
+    constructor(s='', k='') {
+        this.value = s.split('');
+        this.keep = k;
         this.isConverted = false;
     }
     
     convert() {
         if (!this.isConverted) {
-        	console.log('converted');
+            let shifted = [...this.value];
+            shifted.pop();
+            shifted.unshift('\0');
+                    
+        	for (let i in this.value) {
+        	    if (this.value[i] != this.keep) {
+        	        this.value[i] = convertChar(this.value[i], shifted[i]);
+        	    }
+        	}
             this.isConverted = true;
         }
     }
     
     getConverted() {
         if (this.isConverted) {
-            return this.value;
+            return this.value.join();
         }
     }
 }
