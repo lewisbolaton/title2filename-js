@@ -1,3 +1,5 @@
+import convertChar from './convertChar.mjs';
+
 export default class Field {
     constructor(s='', k='') {
         this.value = s.split('');
@@ -13,7 +15,7 @@ export default class Field {
                     
         	for (let i in this.value) {
         	    if (this.value[i] != this.keep) {
-        	        console.log('preceeding char: ' + shifted[i]);
+        	        this.value[i] = convertChar(this.value[i], shifted[i]);
         	    }
         	}
             this.isConverted = true;
