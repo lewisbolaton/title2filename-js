@@ -12,7 +12,7 @@ export default class Field {
         shifted.pop();
         shifted.unshift('\0');
                 
-    	for (let i in this.value) {
+    	for (let i = 0; i < this.value.length; i++) {
     	    if (k.includes(this.value[i])) {
     	        converted.push(convertChar(this.value[i], shifted[i]));
     	    } else {
