@@ -1,0 +1,24 @@
+# Nuxt dev/build outputs
+frontend-nuxt/.output
+frontend-nuxt/.data
+frontend-nuxt/.nuxt
+frontend-nuxt/.nitro
+frontend-nuxt/.cache
+frontend-nuxt/dist
+
+# Node dependencies
+frontend-nuxt/node_modules
+
+# Logs
+frontend-nuxt/logs
+frontend-nuxt/*.log
+
+# Misc
+frontend-nuxt/.DS_Store
+frontend-nuxt/.fleet
+frontend-nuxt/.idea
+
+# Local env files
+frontend-nuxt/.env
+frontend-nuxt/.env.*
+frontend-nuxt/!.env.example
