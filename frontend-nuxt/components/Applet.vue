@@ -2,36 +2,23 @@
   <div class="applet">
     <div class="entries">
       <Entry v-for="(entry, index) in entries" :index="index"/>
-      <button @click="addEntry()">add_field</button>
+      <button @click="addEntry">add_field</button>
     </div>
 
-    <button @click="conv()" v-if="!isConverted">convert</button>
+    <button @click="convert" v-if="isHidden">convert</button>
 
-    <div class="results" v-else="!isConverted">
+    <div class="results" v-else="isHidden">
       <div class="clipboard">
         <input readonly type="text">
         <button>copy</button>
       </div>
-      <button @click="conv_new()">convert_new</button>
+      <button @click="convertNew">convert_new</button>
     </div>
   </div>
 </template>
 
 <script setup lang="js">
-
-  /*
-  export default {
-    data () {
-      return {
-        isConverted: false,
-        saa: 3
-      }
-    }
-  }
-  */
-
-  const isConverted = useState('isConverted', () => false);
-  
+  const isHidden = useState('isHidden', () => true);
   const entries = useEntries();
 
   const addEntry = () => {
@@ -39,20 +26,20 @@
       alert('Maximum number of fields reached');
     } else {
       entries.value.push({title: '', filter: ''});
-    console.log(entries.value);
     }
   }
 
-  const conv = () => {
-    isConverted.value = true;
+  const convert = () => {
+    // Process input here
+    isHidden.value = false;
   }
 
-  const conv_new = () => {
+  const convertNew = () => {
     entries.value.forEach(e => {
       e.title = '';
       e.filter = '';
     });
-    isConverted.value = false;
+    isHidden.value = true;
   }
 
 </script>
