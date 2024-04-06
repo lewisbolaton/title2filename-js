@@ -1,9 +1,8 @@
 <template>
   <div class="entry">
-    <span>{{ index }}</span>
     <input type="text" v-model="entries[index].title">
     <input type="text" class="filter" v-model="entries[index].filter">
-    <button @click="rmEntry(index)">remove</button>
+    <button @click="removeEntry(index)">remove</button>
   </div>
 </template>
 
@@ -20,16 +19,13 @@ input.filter {
 
 <script setup lang="js">
   defineProps(['index']);
-
   const entries = useEntries();
 
-  const rmEntry = index => {
+  const removeEntry = index => {
     if (entries.value.length < 2) {
       alert('Need at least one field');
     } else {
-
       entries.value.splice(index, 1);
-    console.log(entries.value);
     }
   }
 </script>
