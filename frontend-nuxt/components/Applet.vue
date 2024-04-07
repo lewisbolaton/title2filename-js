@@ -9,8 +9,8 @@
 
     <div class="results" v-else="isHidden">
       <div class="clipboard">
-        <input readonly type="text" v-model="output">
-        <button>copy</button>
+        <input readonly type="text" v-model="resultString" ref="result">
+        <button @click="copyResult">copy</button>
       </div>
       <button @click="convertNew">convert_new</button>
     </div>
@@ -18,9 +18,12 @@
 </template>
 
 <script setup lang="js">
+  import {ref} from 'vue';
+
   const isHidden = useState('isHidden', () => true);
   const entries = useEntries();
-  var output = '';
+  var resultString = '';
+  var result = ref('null');
 
   const addEntry = () => {
     if (entries.value.length >= 10) {
@@ -33,10 +36,13 @@
   const convert = () => {
     // Process input here
     isHidden.value = false;
+    resultString = title2filename('_', ...entries.value.map((e) => [e.title, e.filter]));
 
-    //console.log(title2filename('_', ...entries.value.map((e) => [e.title, e.filter])));
+  }
 
-    output = title2filename('_', ...entries.value.map((e) => [e.title, e.filter]));
+  const copyResult = () => {
+    result.value.select();
+    navigator.clipboard.writeText(resultString);
   }
 
   const convertNew = () => {
