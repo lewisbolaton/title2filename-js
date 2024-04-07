@@ -9,7 +9,7 @@
 
     <div class="results" v-else="isHidden">
       <div class="clipboard">
-        <input readonly type="text">
+        <input readonly type="text" v-model="output">
         <button>copy</button>
       </div>
       <button @click="convertNew">convert_new</button>
@@ -20,6 +20,7 @@
 <script setup lang="js">
   const isHidden = useState('isHidden', () => true);
   const entries = useEntries();
+  var output = '';
 
   const addEntry = () => {
     if (entries.value.length >= 10) {
@@ -32,6 +33,10 @@
   const convert = () => {
     // Process input here
     isHidden.value = false;
+
+    //console.log(title2filename('_', ...entries.value.map((e) => [e.title, e.filter])));
+
+    output = title2filename('_', ...entries.value.map((e) => [e.title, e.filter]));
   }
 
   const convertNew = () => {
