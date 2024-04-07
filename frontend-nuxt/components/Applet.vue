@@ -1,0 +1,77 @@
+<template>
+  <div class="applet">
+    <div class="entries">
+      <Entry v-for="(entry, index) in entries" :index="index"/>
+      <button @click="addEntry">add_field</button>
+    </div>
+
+    <button @click="convert" v-if="isHidden">convert</button>
+
+    <div class="results" v-else="isHidden">
+      <div class="clipboard">
+        <input readonly type="text" v-model="resultString" ref="result">
+        <button @click="copyResult">copy</button>
+      </div>
+      <button @click="convertNew">convert_new</button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="js">
+  import {ref} from 'vue';
+
+  const isHidden = useState('isHidden', () => true);
+  const entries = useEntries();
+  var resultString = '';
+  var result = ref('null');
+
+  const addEntry = () => {
+    if (entries.value.length >= 10) {
+      alert('Maximum number of fields reached');
+    } else {
+      entries.value.push({title: '', filter: ''});
+    }
+  }
+
+  const convert = () => {
+    // Process input here
+    isHidden.value = false;
+    resultString = title2filename('_', ...entries.value.map((e) => [e.title, e.filter]));
+
+  }
+
+  const copyResult = () => {
+    result.value.select();
+    navigator.clipboard.writeText(resultString);
+  }
+
+  const convertNew = () => {
+    entries.value.forEach(e => {
+      e.title = '';
+      e.filter = '';
+    });
+    isHidden.value = true;
+  }
+
+</script>
+
+<style>
+.applet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 10px;
+}
+
+.entries {
+  background-color: green;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: 10px;
+  
+  padding: 10px;
+}
+</style>
