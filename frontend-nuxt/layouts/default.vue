@@ -3,12 +3,12 @@
     <NuxtLink to="/">text2filename-js</NuxtLink>
     <NuxtLink to="/">About</NuxtLink>
     <NuxtLink to="/">Guide</NuxtLink>
-    <NuxtLink to="/">Source</NuxtLink>
+    <NuxtLink to="https://github.com/lewisbolaton/title2filename-js">Source</NuxtLink>
   </div>
   <slot />
   <div class="footer">
     <span>© 2024 Lewis Bolaton</span>
-    <span>Built with <NuxtLink to="/">NuxtJS</NuxtLink></span>
+    <span>Built with <NuxtLink to="https://nuxt.com">NuxtJS</NuxtLink></span>
   </div>
 </template>
 
