@@ -2,7 +2,9 @@
   <div class="applet">
     <div class="entries">
       <Entry v-for="(entry, index) in entries" :index="index"/>
-      <button @click="addEntry">add_field</button>
+      <button @click="addEntry">
+        Add field<span class="material-symbols-outlined">add_box</span>
+      </button>
     </div>
 
     <button @click="convert" v-if="isHidden">
