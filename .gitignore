@@ -22,3 +22,5 @@ frontend-nuxt/.idea
 frontend-nuxt/.env
 frontend-nuxt/.env.*
 frontend-nuxt/!.env.example
+
+TODO.md
