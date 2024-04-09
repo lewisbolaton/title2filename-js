@@ -85,4 +85,16 @@ button {
   display: inline-flex;
   align-items: center;
 }
+
+div.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+div.clipboard {
+  display: flex;
+  align-items: stretch;
+}
 </style>
