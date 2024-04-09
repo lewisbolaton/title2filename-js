@@ -2,17 +2,25 @@
   <div class="applet">
     <div class="entries">
       <Entry v-for="(entry, index) in entries" :index="index"/>
-      <button @click="addEntry">add_field</button>
+      <button @click="addEntry">
+        Add field<span class="material-symbols-outlined">add_box</span>
+      </button>
     </div>
 
-    <button @click="convert" v-if="isHidden">convert</button>
+    <button @click="convert" v-if="isHidden">
+      Convert<span class="material-symbols-outlined">double_arrow</span> 
+    </button>
 
     <div class="results" v-else="isHidden">
       <div class="clipboard">
         <input readonly type="text" v-model="resultString" ref="result">
-        <button @click="copyResult">copy</button>
+        <button @click="copyResult">
+          <span class="material-symbols-outlined">content_copy</span>
+        </button>
       </div>
-      <button @click="convertNew">convert_new</button>
+      <button @click="convertNew">
+        Convert new<span class="material-symbols-outlined">refresh</span>
+      </button>
     </div>
   </div>
 </template>
@@ -73,5 +81,22 @@
   gap: 10px;
   
   padding: 10px;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+}
+
+div.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+div.clipboard {
+  display: flex;
+  align-items: stretch;
 }
 </style>
