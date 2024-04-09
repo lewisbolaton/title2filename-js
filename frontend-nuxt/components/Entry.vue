@@ -2,7 +2,9 @@
   <div class="entry">
     <input type="text" v-model="entries[index].title">
     <input type="text" class="filter" v-model="entries[index].filter">
-    <button @click="removeEntry(index)">remove</button>
+    <button @click="removeEntry(index)">
+      <span class="material-symbols-outlined">delete</span>
+    </button>
   </div>
 </template>
 
