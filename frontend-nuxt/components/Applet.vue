@@ -5,14 +5,20 @@
       <button @click="addEntry">add_field</button>
     </div>
 
-    <button @click="convert" v-if="isHidden">convert</button>
+    <button @click="convert" v-if="isHidden">
+      Convert<span class="material-symbols-outlined">double_arrow</span> 
+    </button>
 
     <div class="results" v-else="isHidden">
       <div class="clipboard">
         <input readonly type="text" v-model="resultString" ref="result">
-        <button @click="copyResult">copy</button>
+        <button @click="copyResult">
+          <span class="material-symbols-outlined">content_copy</span>
+        </button>
       </div>
-      <button @click="convertNew">convert_new</button>
+      <button @click="convertNew">
+        Convert new<span class="material-symbols-outlined">refresh</span>
+      </button>
     </div>
   </div>
 </template>
@@ -73,5 +79,10 @@
   gap: 10px;
   
   padding: 10px;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
 }
 </style>
