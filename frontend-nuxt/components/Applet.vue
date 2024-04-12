@@ -43,9 +43,13 @@
 
   const convert = () => {
     // Process input here
-    isHidden.value = false;
-    resultString = title2filename('_', ...entries.value.map((e) => [e.title, e.filter]));
-
+    let nonEmpty = entries.value.filter((i) => i.title.length > 0);
+    if (nonEmpty.length > 0) {
+      isHidden.value = false;
+      resultString = title2filename('_', ...nonEmpty.map((e) => [e.title, e.filter]));
+    } else {
+      alert('No input found');
+    }
   }
 
   const copyResult = () => {
