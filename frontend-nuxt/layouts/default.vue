@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <NuxtLink to="/">text2filename-js</NuxtLink>
+    <NuxtLink to="/">title2filename-js</NuxtLink>
     <NuxtLink to="/">About</NuxtLink>
     <NuxtLink to="/">Guide</NuxtLink>
     <NuxtLink to="https://github.com/lewisbolaton/title2filename-js">Source</NuxtLink>
@@ -30,10 +30,14 @@ html, body {
 .header {
   display: inline-flex;
   gap: 12px;
+
+  font-family: sans-serif;
 }
 
 .footer {
   display: inline-flex;
   justify-content: space-between;
+
+  font-family: sans-serif;
 }
 </style>
