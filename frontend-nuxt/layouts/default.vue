@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <NuxtLink to="/">text2filename-js</NuxtLink>
-    <NuxtLink to="/">About</NuxtLink>
+    <NuxtLink to="about">About</NuxtLink>
     <NuxtLink to="/">Guide</NuxtLink>
     <NuxtLink to="https://github.com/lewisbolaton/title2filename-js">Source</NuxtLink>
   </div>
