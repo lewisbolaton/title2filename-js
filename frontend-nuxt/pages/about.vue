@@ -2,11 +2,11 @@
   <div class="internal">
     <h2>About</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur. At varius vel pharetra vel turpis. Enim facilisis gravida neque convallis a. Nisi est sit amet facilisis. In nibh mauris cursus mattis molestie a iaculis. Diam donec adipiscing tristique risus. Vestibulum mattis ullamcorper velit sed ullamcorper. Orci porta non pulvinar neque laoreet suspendisse. Orci dapibus ultrices in iaculis nunc sed. Odio tempor orci dapibus ultrices in iaculis. Fermentum odio eu feugiat pretium nibh ipsum. Nunc eget lorem dolor sed viverra. Enim nunc faucibus a pellentesque. Accumsan lacus vel facilisis volutpat. Pharetra et ultrices neque ornare aenean. Eget aliquet nibh praesent tristique magna sit. Neque vitae tempus quam pellentesque.
+      Operating systems enforce several hard restrictions when naming files. In Windows systems, a handful of printable ASCII characters such as the less than symbol, the greater than symbol, the vertical bar symbol, and more are not allowed. In Linux systems, the only restricted printable character is the forward slash symbol which is used for subdirectories. In Windows, the dot symbol is often used for file extensions but not entirely restricted. These restrictions can introduce problems when moving files and directories between these systems.
     </p>
 
     <p>
-      Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. In vitae turpis massa sed. Ac ut consequat semper viverra nam libero justo. Nunc lobortis mattis aliquam faucibus. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Montes nascetur ridiculus mus mauris vitae ultricies leo integer. Orci ac auctor augue mauris augue neque gravida in. Enim ut tellus elementum sagittis vitae. Nunc congue nisi vitae suscipit tellus mauris a diam. Diam volutpat commodo sed egestas. Sit amet facilisis magna etiam tempor orci. Morbi enim nunc faucibus a. Ultrices dui sapien eget mi proin sed.
+      This tool addresses this by automatically converting filenames that work well between different operating systems. An easy-to-use interface is provided for users to add all the information desired to be included in their filename without worrying about which characters are restricted or not. It generates a filename users can easily copy and paste to a file manager of their choice.
     </p>
   </div>
 </template>
@@ -20,5 +20,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .internal h2 {
+    color: #205EA6;
   }
 </style>
